@@ -96,7 +96,7 @@ switch( posizione){
 
     svg.append("g")
 
-     .attr("transform", "translate(" + `${hpadding-50}` + "," + ((height/2) +  20)+ ")")
+     .attr("transform", "translate(" + `${hpadding-50}` + "," + ((height/2) +  50)+ ")")
      .append("text")
      .attr("font-size", "14px").html(titolo)
      .attr("transform", "rotate(-90)")
@@ -118,7 +118,7 @@ switch( posizione){
 	 .attr("d", "M 50,0 55,12 45,12 z")
 
     svg.append("g")
-	.attr("transform", "translate(" + `${width-30}` + "," + (height/2)+ ")")
+	.attr("transform", "translate(" + `${width-30}` + "," + ((height/2)+40)+ ")")
 	.append("text")
 	.attr("font-size", "14px").html(titolo)
 	.attr("transform", "rotate(-90)")
@@ -182,8 +182,8 @@ var metri_quadri = scala("lineare",[0 ,400], "v")
 var co2 = scala("lineare",[0 ,100], "v")
 var prodotti = scala("nominale", ["", "Beef (beef herd)", "Lamb & Mutton", "Cheese", "Beef (dairy herd)", "Dark Chocolate", " " ] , "h")
 
-assi("left", co2, true,100, "Co2(kg) emissions per kg") // parametri(posizione, scala, freccia o non freccia sull'asse, valore dove mettere la freccia,  titolo dell'asse)
-assi("right", metri_quadri, true, 400, "Land used(m^2) per kg", null,null)//ultimi due parametri formato, numero dei tick dell'asse
+assi("left", co2, true,100, "Co2(kg) emissions per kg of product") // parametri(posizione, scala, freccia o non freccia sull'asse, valore dove mettere la freccia,  titolo dell'asse)
+assi("right", metri_quadri, true, 400, "Land used(m^2) per kg of product", null,null)//ultimi due parametri formato, numero dei tick dell'asse
 assi("bottom", prodotti, false, " ", "Products", null, null)
 //assi("top", scala_nominale_orizzontale, false, " ", "sopra" )
 
@@ -277,25 +277,25 @@ const emissioni = svg.selectAll('rect.co')
 
   svg.append("g")
 	.append("rect")
-	.attr("transform", "translate(" + (width -65) + "," + ((hpadding/5)-15) + ")")
-	.attr("width", "12")
+	.attr("transform", "translate(" + ((width/2)+45) + "," + ((hpadding/5)-15) + ")")
+	.attr("width", "30")
 	.attr("height", "12")
 	.attr("fill", `${metri_color}`)
 
 svg.append("g")
 	.append("rect")
-	.attr("transform", "translate(" + (width -65) + "," + ((hpadding/5)) + ")")
+	.attr("transform", "translate(" + ((width/2)-80) + "," + ((hpadding/5)-15) + ")")
 
-	.attr("width", "12")
+	.attr("width", "30")
 	.attr("height", "12")
 	.attr("fill", `${co2_color}`)
 
 svg.append("g")
-	.attr("transform", "translate(" + (width-50) + "," + ((hpadding/5)+10) + ")")
+	.attr("transform", "translate(" + ((width/2)-45) + "," + ((hpadding/5)-5) + ")")
 	.append("text")
-	.attr("font-size", "12px").text("Co2")
+	.attr("font-size", "13px").text("Co2 emissions")
 
 svg.append("g")
-	.attr("transform", "translate(" + (width-50)  + "," + ((hpadding/5)-6) + ")")
+	.attr("transform", "translate(" + ((width/2)+80)  + "," + ((hpadding/5)-5) + ")")
 	.append("text")
-	.attr("font-size", "12px").text("Land")
+	.attr("font-size", "13px").text("Land used")
