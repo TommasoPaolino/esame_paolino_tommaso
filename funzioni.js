@@ -299,3 +299,8 @@ svg.append("g")
 	.attr("transform", "translate(" + ((width/2)+80)  + "," + ((hpadding/5)-5) + ")")
 	.append("text")
 	.attr("font-size", "13px").text("Land used")
+
+svg.append("g")
+	.attr("transform", "translate(" + ((hpadding)-90)  + "," + ((hpadding/5)-5) + ")")
+	.append("text")
+	.attr("font-size", "14px").text("Co2 Total Emissions - Land used by product")
